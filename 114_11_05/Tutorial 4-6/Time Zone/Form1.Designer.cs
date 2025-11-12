@@ -61,10 +61,11 @@
             "明尼亞波利斯",
             "紐約",
             "舊金山"});
-            this.cityListBox.Location = new System.Drawing.Point(201, 154);
+            this.cityListBox.Location = new System.Drawing.Point(214, 149);
             this.cityListBox.Name = "cityListBox";
-            this.cityListBox.Size = new System.Drawing.Size(322, 229);
+            this.cityListBox.Size = new System.Drawing.Size(323, 184);
             this.cityListBox.TabIndex = 1;
+            this.cityListBox.SelectedIndexChanged += new System.EventHandler(this.cityListBox_SelectedIndexChanged);
             // 
             // outputDescriptionLabel
             // 
@@ -80,7 +81,7 @@
             // 
             this.timeZoneLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.timeZoneLabel.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.timeZoneLabel.Location = new System.Drawing.Point(414, 442);
+            this.timeZoneLabel.Location = new System.Drawing.Point(414, 445);
             this.timeZoneLabel.Name = "timeZoneLabel";
             this.timeZoneLabel.Size = new System.Drawing.Size(144, 51);
             this.timeZoneLabel.TabIndex = 3;

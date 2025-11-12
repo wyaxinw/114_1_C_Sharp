@@ -1,0 +1,88 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Ending_Balance
+{
+    /// <summary>
+    /// 主表單類別：Form1
+    ///
+    /// 此類別代表應用程式的主要視窗（表單），由設計工具產生部分程式碼（InitializeComponent）
+    /// 並包含三個按鈕的事件處理程序：計算、清除與退出。以下以繁體中文加入詳細註解，說明每個成員的用途，
+    /// 以及事件處理程序內的邏輯（目前 calculateButton_Click 尚未實作計算邏輯，保留為空的佔位）。
+    /// </summary>
+    public partial class Form1 : Form
+    {
+        /// <summary>
+        /// 建構子：初始化表單元件。
+        ///
+        /// 當表單被建立時，會呼叫 InitializeComponent 方法來建立與配置所有設計時加入的控制項。
+        /// 這個建構子不包含其他邏輯；如果要在表單啟動時初始化資料或設定預設值，
+        /// 可在此加入相關程式碼（例如載入設定、預設欄位值、註冊額外事件等）。
+        /// </summary>
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        /// <summary>
+        /// 計算按鈕的事件處理程序。
+        ///
+        /// 使用者按下「計算」按鈕時此方法會被呼叫。此處應實作主要的業務邏輯：
+        /// 1. 從起始餘額（startingBalTextBox）與月份數量（monthsTextBox）讀取使用者輸入。
+        /// 2. 驗證輸入是否為數字，處理格式錯誤或空值。
+        /// 3. 依題目需求計算每月利息或變動，並把結果顯示在 detailListBox 與 endingBalanceLabel。
+        /// 4. 若發生例外（例如格式轉換失敗），應以友善訊息提示使用者。
+        ///
+        /// 注意：目前此方法為空實作（placeholder），保留給後續要加入實際計算邏輯的位置，
+        /// 不會改變現有程式的行為。
+        /// </summary>
+        private void calculateButton_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        /// <summary>
+        /// 清除按鈕的事件處理程序。
+        ///
+        /// 使用者按下「清除」按鈕時會執行以下動作：
+        /// - 清空起始餘額與月份數量的文字方塊（startingBalTextBox、monthsTextBox）。
+        /// - 清除用來顯示結餘的標籤（endingBalanceLabel）的文字內容。
+        /// - 清空顯示明細的 ListBox（detailListBox）中的所有項目。
+        /// - 將鍵盤焦點重設到起始餘額的文字方塊，讓使用者可以立即重新輸入資料。
+        ///
+        /// 此處以繁體中文註解每一步的目的與行為，實作保持與原本相同。
+        /// </summary>
+        private void clearButton_Click(object sender, EventArgs e)
+        {
+            // 清空兩個輸入欄位的文字內容。
+            startingBalTextBox.Text = "";
+            monthsTextBox.Text = "";
+            // 清空顯示結餘的標籤（避免殘留先前計算結果）。
+            endingBalanceLabel.Text = "";
+            // 清空詳細清單中的所有項目，使顯示區域回到初始狀態。
+            detailListBox.Items.Clear();
+
+            // 將焦點重設到起始餘額欄位，方便使用者繼續輸入。
+            startingBalTextBox.Focus();
+        }
+
+        /// <summary>
+        /// 退出按鈕的事件處理程序。
+        ///
+        /// 使用者按下「退出」按鈕時會呼叫此方法，會關閉目前的表單。若此表單是主視窗，
+        /// 關閉表單會導致應用程式結束。可視需求在關閉前提示使用者確認或進行善後處理。
+        /// </summary>
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            // 關閉目前表單視窗，結束應用程式（若為主視窗）。
+            this.Close();
+        }
+    }
+}

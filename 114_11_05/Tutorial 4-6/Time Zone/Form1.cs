@@ -19,40 +19,46 @@ namespace Time_Zone
 
         private void okButton_Click(object sender, EventArgs e)
         {
-           string city; 
+            string city;
 
-           if (cityListBox.SelectedIndex !=-1)
-        }
-           city =cityBox.SelectedItem.ToString();
+            if (cityListBox.SelectedIndex != -1)
+            {
+                city = cityListBox.SelectedItem.ToString();
 
-             switch (city)
-              {
-                case "紐約":
-                     timeZoneLabel.Text = "東部標準時間";
-                     break;
-                case "檀香山":
-                     timeZoneLabel.Text = "夏威夷標準時間";
-                     break;
-                case "明尼亞波利斯":
-                     timeZoneLabel.Text = "中部時間";
-                     break;
-                case "丹佛":
-                     timeZoneLabel.Text = "山地標準時間";
-                     break;
-                case "舊金山":
-                     timeZoneLabel.Text = "太平洋標準時間";
-                     break;
-              }
-              else
-              {
+                switch (city)
+                {
+                    case "紐約":
+                        timeZoneLabel.Text = "東部標準時間";
+                        break;
+                    case "檀香山":
+                        timeZoneLabel.Text = "夏威夷標準時間";
+                        break;
+                    case "明尼亞波利斯":
+                        timeZoneLabel.Text = "中部標準時間";
+                        break;
+                    case "丹佛":
+                        timeZoneLabel.Text = "山地標準時間";
+                        break;
+                    case "舊金山":
+                        timeZoneLabel.Text = "太平洋標準時間";
+                        break;
+                }
+            }
+            else
+            {
                 MessageBox.Show("請先選擇一個城市");
-              }
-
+            }
+                }
 
 private void exitButton_Click(object sender, EventArgs e)
         {
             // Close the form.
             this.Close();
+        }
+
+        private void cityListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
