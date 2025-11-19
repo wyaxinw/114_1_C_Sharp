@@ -1,0 +1,69 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.IO;
+
+namespace South_America
+{
+    // Form1 為本表單的部分類別（partial），其 UI 元件由 Form1.Designer.cs 所自動產生。
+    // 此檔案放置與使用者互動相關的程式邏輯，例如按鈕事件處理程序等。
+    public partial class Form1 : Form
+    {
+        /// <summary>
+        /// 建構子：初始化表單元件。
+        /// InitializeComponent() 會載入由設計器產生的 UI 元件設定（位置、大小、屬性等）。
+        /// 此處不進行其他邏輯初始化，以維持設計器與程式碼的分離。
+        /// </summary>
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        /// <summary>
+        /// 取得國家按鈕的 Click 事件處理程序。
+        /// 當使用者按下「取得國家」按鈕時會觸發此方法。
+        /// 在此可實作將南美洲國家清單載入到 ListBox 的邏輯，例如從檔案讀取或在程式中填入預設資料。
+        /// 目前保留為占位狀態（尚未實作具體載入邏輯），以利未來擴充。
+        /// </summary>
+        /// <param name="sender">事件的發起者（通常為按鈕物件）。</param>
+        /// <param name="e">事件參數，包含事件相關資訊。</param>
+        private void getCountriesButton_Click(object sender, EventArgs e)
+        {
+            // 這裡是取得國家按鈕的點擊事件處理程式。
+            // 範例：若要從內部陣列填入 ListBox，可寫入如下示意程式碼（目前註解示範）：
+            // string[] countries = { "巴西", "阿根廷", "哥倫比亞", "智利", "秘魯" };
+            // countriesListBox.Items.Clear();
+            // countriesListBox.Items.AddRange(countries);
+
+            // 或者若要從檔案讀取：
+            // string path = "countries.txt";
+            // if (File.Exists(path))
+            // {
+            //     var lines = File.ReadAllLines(path);
+            //     countriesListBox.Items.Clear();
+            //     countriesListBox.Items.AddRange(lines);
+            // }
+
+            // 目前保留空實作，讓按鈕點擊不執行其他動作。
+        }
+
+        /// <summary>
+        /// 退出按鈕的 Click 事件處理程序。
+        /// 當使用者按下「退出」按鈕時，關閉當前表單，釋放包含的資源。
+        /// 若此表單為應用程式主表單，關閉時將結束應用程式執行。
+        /// </summary>
+        /// <param name="sender">事件的發起者（通常為按鈕物件）。</param>
+        /// <param name="e">事件參數，包含事件相關資訊。</param>
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            // 關閉表單，等同於使用者按下視窗的關閉按鈕。
+            this.Close();
+        }
+    }
+}

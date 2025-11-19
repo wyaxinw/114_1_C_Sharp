@@ -46,37 +46,38 @@ namespace Ending_Balance
         private void calculateButton_Click(object sender, EventArgs e)
         {
             //TODO: 實作計算邏輯。保留目前空方法以避免改變現有行為。
-            const decimal INTEREST RATE = 0.005m; // 每月利率 0.5%
+            const decimal INTEREST_RATE = 0.005m; // 每月利率 0.5%
 
             decimal startingBalance; //使用者輸入的起始餘額
             int months;              //使用者輸入的月份數量
-            int counter;             //計數器
+            int count=1;             //用於追蹤當前月份的計數器
 
             if (decimal.TryParse(startingBalTextBox.Text, out startingBalance))
             {
-                if (int count = 1; counter <= months; counter++)
+                if (int.TryParse(monthsTextBox.Text , out months) && months>0)
                 {
                     while (count <= months)
                     {
                         //計算每月結餘
-                        staringBalance = startingBalance * (1 + INTEREST RATE);
+                        startingBalance *= (1 + INTEREST_RATE);
 
                         //將每月詳細資訊加入清單框
-                        detailListBox.Items.Add("第" + count + "個月結餘:" + startingBalance.ToString("c"));
+                        detailListBox.Items.Add("第" + count + "個月結餘:" + startingBalance.ToString("c2"));
                         count++;
                     }
-                    endingBalanceLabel.Text = Balance.ToString("C");
+                    //顯示最終結餘
+                    endingBalanceLabel.Text = startingBalance.ToString("C2");
                 }
                 else
                 {
-                    MessageBox.Show("請輸入有效的月份數量(正整數)。"，"輸入錯誤");
+                    MessageBox.Show("請輸入有效的月份數量(正整數)。","輸入錯誤");
                 }
 
                 }
             }
             else
             {
-                MessageBox.Show("請輸入有效的月份數量(正整數)。"，"輸入錯誤");
+                MessageBox.Show("請輸入有效的起始餘額。","輸入錯誤");
             }
 } 
 
@@ -93,20 +94,21 @@ namespace Ending_Balance
         /// </summary>
         private void clearButton_Click(object sender, EventArgs e)
         {
-            // 清空兩個輸入欄位的文字內容。
-            startingBalTextBox.Text = "";
-            monthsTextBox.Text = "";
-            // 清空顯示結餘的標籤（避免殘留先前計算結果）。
-            endingBalanceLabel.Text = "";
-            // 清空詳細清單中的所有項目，使顯示區域回到初始狀態。
-            detailListBox.Items.Clear();
+             // Clear the TextBoxes, the endingBalanceLabel control,
+             // and the ListBox,
+             startingBalTextBox.Text ="";
+             monthsTextBox.Text = "";
+             endingBalanceLabel.Text = "";
+             detailListBox.Items.Clear();
 
             // 將焦點重設到起始餘額欄位，方便使用者繼續輸入。
             startingBalTextBox.Focus();
         }
 
         /// <summary>
-        /// 退出按鈕的事件處理程序。
+            // Reset the focus
+            // 將輸入焦點設回起始餘額輸入框，提升使用者體驗。
+            startingBalTextBox.Items.Clear();
         ///
         /// 使用者按下「退出」按鈕時會呼叫此方法，會關閉目前的表單。若此表單是主視窗，
         /// 關閉表單會導致應用程式結束。可視需求在關閉前提示使用者確認或進行善後處理。

@@ -1,0 +1,111 @@
+﻿namespace Friend_File
+{
+    partial class Form1
+    {
+        /// <summary>
+        /// 必需的設計器變數。
+        /// (說明: 此處為 Windows Form 設計器所產生的元件容器, 用來集中管理非受控資源)
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// 清理所有正在使用的資源。
+        /// <param name="disposing">如果應釋放受控資源, 則為 true; 否則為 false。</param>
+        /// </summary>
+        protected override void Dispose(bool disposing)
+        {
+            // 如果為 true, 代表需釋放受控資源 (例如 components)。
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// 設計器所需的方法 - 請勿使用程式碼編輯器修改
+        /// 這個方法會初始化表單上的所有元件設定 (位置、大小、屬性等)。
+        /// 我們在此只修改元件的 Text 屬性為繁體中文，並將字型大小設為 18。
+        /// 其他屬性一律保持原樣。
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.promptLabel = new System.Windows.Forms.Label();
+            this.nameTextBox = new System.Windows.Forms.TextBox();
+            this.writeNameButton = new System.Windows.Forms.Button();
+            this.exitButton = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // 全域字型設定 (將套用到表單及其子控制項，確保所有元件字型大小為 18)
+            // 使用 Microsoft JhengHei（微軟正黑體）以確保繁體中文顯示正確
+            // 注意：我們僅改變字型與文字顯示，版面其他設定不做變更
+            this.Font = new System.Drawing.Font("Microsoft JhengHei", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
+            // promptLabel
+            // (說明: 提示使用者在文字方塊中輸入朋友名稱)
+            this.promptLabel.AutoSize = true;
+            this.promptLabel.Location = new System.Drawing.Point(12, 19);
+            this.promptLabel.Name = "promptLabel";
+            this.promptLabel.Size = new System.Drawing.Size(109, 13);
+            this.promptLabel.TabIndex = 0;
+            // 將提示文字改為繁體中文
+            this.promptLabel.Text = "請輸入朋友的名字：";
+            // 
+            // nameTextBox
+            // (說明: 使用者輸入朋友名字的欄位)
+            this.nameTextBox.Location = new System.Drawing.Point(127, 16);
+            this.nameTextBox.Name = "nameTextBox";
+            this.nameTextBox.Size = new System.Drawing.Size(153, 20);
+            this.nameTextBox.TabIndex = 1;
+            // 
+            // writeNameButton
+            // (說明: 按下此按鈕以寫入/處理輸入之朋友名稱)
+            this.writeNameButton.Location = new System.Drawing.Point(70, 56);
+            this.writeNameButton.Name = "writeNameButton";
+            this.writeNameButton.Size = new System.Drawing.Size(75, 23);
+            this.writeNameButton.TabIndex = 2;
+            // 將按鈕文字改為繁體中文
+            this.writeNameButton.Text = "寫入名字";
+            this.writeNameButton.UseVisualStyleBackColor = true;
+            this.writeNameButton.Click += new System.EventHandler(this.writeNameButton_Click);
+            // 
+            // exitButton
+            // (說明: 按下此按鈕以離開表單)
+            this.exitButton.Location = new System.Drawing.Point(151, 56);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(75, 23);
+            this.exitButton.TabIndex = 3;
+            // 將按鈕文字改為繁體中文
+            this.exitButton.Text = "離開";
+            this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            // 
+            // Form1
+            // (說明: 表單的基本設定。表單標題也改為繁體中文)
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(296, 96);
+            this.Controls.Add(this.exitButton);
+            this.Controls.Add(this.writeNameButton);
+            this.Controls.Add(this.nameTextBox);
+            this.Controls.Add(this.promptLabel);
+            this.Name = "Form1";
+            // 保持表單標題為繁體中文
+            this.Text = "朋友檔案";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        // 元件欄位 (下列為設計器所宣告的控制項)
+        private System.Windows.Forms.Label promptLabel;
+        private System.Windows.Forms.TextBox nameTextBox;
+        private System.Windows.Forms.Button writeNameButton;
+        private System.Windows.Forms.Button exitButton;
+    }
+}
+
