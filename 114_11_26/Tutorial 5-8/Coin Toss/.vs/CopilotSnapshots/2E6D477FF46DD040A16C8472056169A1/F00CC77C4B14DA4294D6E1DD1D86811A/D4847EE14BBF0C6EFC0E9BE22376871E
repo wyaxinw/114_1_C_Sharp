@@ -1,0 +1,116 @@
+﻿namespace Coin_Toss
+{
+    partial class Form1
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            this.tailsPictureBox = new System.Windows.Forms.PictureBox();
+            this.headsPictureBox = new System.Windows.Forms.PictureBox();
+            this.tossButton = new System.Windows.Forms.Button();
+            this.exitButton = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.tailsPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.headsPictureBox)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // tailsPictureBox
+            // 
+            // 設定：顯示「反面」圖案的 PictureBox，調整大小與位置以配合 18pt 字型的按鈕
+            this.tailsPictureBox.Image = global::Coin_Toss.Properties.Resources.Tails1;
+            this.tailsPictureBox.Location = new System.Drawing.Point(20, 16);
+            this.tailsPictureBox.Name = "tailsPictureBox";
+            this.tailsPictureBox.Size = new System.Drawing.Size(220, 220);
+            this.tailsPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.tailsPictureBox.TabIndex = 1;
+            this.tailsPictureBox.TabStop = false;
+            this.tailsPictureBox.Visible = false; // 預設不顯示（與 headsPictureBox 互斥）
+            // 
+            // headsPictureBox
+            // 
+            // 設定：顯示「正面」圖案的 PictureBox，與 tailsPictureBox 大小與位置相同
+            this.headsPictureBox.Image = global::Coin_Toss.Properties.Resources.Heads1;
+            this.headsPictureBox.Location = new System.Drawing.Point(20, 16);
+            this.headsPictureBox.Name = "headsPictureBox";
+            this.headsPictureBox.Size = new System.Drawing.Size(220, 220);
+            this.headsPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.headsPictureBox.TabIndex = 0;
+            this.headsPictureBox.TabStop = false;
+            // 
+            // tossButton
+            // 
+            // 設定：擲硬幣按鈕，文字為繁體中文，使用 18pt 字型，並適度放大按鈕方便使用者操作
+            this.tossButton.Font = new System.Drawing.Font("Microsoft JhengHei UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tossButton.Location = new System.Drawing.Point(30, 248);
+            this.tossButton.Name = "tossButton";
+            this.tossButton.Size = new System.Drawing.Size(110, 42);
+            this.tossButton.TabIndex = 2;
+            this.tossButton.Text = "擲 硬 幣"; // 按鈕文字已改為繁體中文並加空格以利辨識
+            this.tossButton.UseVisualStyleBackColor = true;
+            this.tossButton.Click += new System.EventHandler(this.tossButton_Click);
+            // 
+            // exitButton
+            // 
+            // 設定：離開/結束按鈕，文字為繁體中文，使用 18pt 字型，並位於右側與擲硬幣按鈕對齊
+            this.exitButton.Font = new System.Drawing.Font("Microsoft JhengHei UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.exitButton.Location = new System.Drawing.Point(150, 248);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(110, 42);
+            this.exitButton.TabIndex = 3;
+            this.exitButton.Text = "離 開"; // 繁體中文按鈕文字
+            this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            // 
+            // Form1
+            // 
+            // 設定：表單整體字型改為 18pt，標題改為繁體中文，並調整表單大小以容納圖片與按鈕
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(260, 310);
+            this.Controls.Add(this.exitButton);
+            this.Controls.Add(this.tossButton);
+            this.Controls.Add(this.headsPictureBox);
+            this.Controls.Add(this.tailsPictureBox);
+            this.Font = new System.Drawing.Font("Microsoft JhengHei UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen; // 置中顯示表單
+            this.Text = "擲 硬 幣 程式"; // 表單標題改為繁體中文
+            ((System.ComponentModel.ISupportInitialize)(this.tailsPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.headsPictureBox)).EndInit();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.PictureBox headsPictureBox;
+        private System.Windows.Forms.PictureBox tailsPictureBox;
+        private System.Windows.Forms.Button tossButton;
+        private System.Windows.Forms.Button exitButton;
+        private System.Windows.Forms.ToolTip toolTip1;
+    }
+}
