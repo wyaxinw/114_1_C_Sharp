@@ -1,0 +1,61 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Lights
+{
+    public partial class Form1 : Form
+    {
+
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        // 按下「開關燈」按鈕時的處理程序
+        // 此處會檢查目前哪個 PictureBox 可見以判斷燈的狀態，
+        // 然後切換圖片的可見性並更新狀態標籤為繁體中文。
+        private void switchButton_Click(object sender, EventArgs e)
+        {
+            // 如果目前顯示的是開燈的圖片，則要關燈
+            if (lightOnPictureBox.Visible == true)
+            {
+                // 顯示關燈圖片，隱藏開燈圖片
+                lightOnPictureBox.Visible = false;
+                lightOffPictureBox.Visible = true;
+                // 更新狀態文字為繁體中文「關閉」
+                lightStateLabel.Text = "關閉";
+            }
+            else
+            {
+                // 否則顯示開燈圖片，隱藏關燈圖片
+                lightOffPictureBox.Visible = false;
+                lightOnPictureBox.Visible = true;
+                // 更新狀態文字為繁體中文「開啟」
+                lightStateLabel.Text = "開啟";
+            }
+        }
+
+        // 按下「結束」按鈕時關閉表單
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            // 關閉表單並結束應用程式
+            this.Close();
+        }
+
+        // 提供一個方法用來程式內部開啟燈（如果未來需要由其他邏輯呼叫）
+        private void turnOn()
+        {
+            // 設定顯示開燈圖片、隱藏關燈圖片，並將狀態文字設為繁體中文「開啟」
+            lightOffPictureBox.Visible = false;
+            lightOnPictureBox.Visible = true;
+            lightStateLabel.Text = "開啟";
+        }
+    }
+}
